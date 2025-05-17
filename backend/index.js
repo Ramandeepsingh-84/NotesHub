@@ -70,7 +70,7 @@ app.use(cookieParser());
 // Allowed origins without trailing slash
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://noteshub4u.vercel.app"
+  "https://noteshub4u.onrender.com"
 ];
 
 // CORS setup with dynamic origin check
