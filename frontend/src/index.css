@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: sans-serif;
+  }
+
+  body {
+    background-color: rgb(241, 245, 241);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+  }
+
+  .btn-primary {
+    @apply w-full text-sm bg-[#2B85FF] text-white p-2 rounded my-1 hover:bg-blue-700;
+  }
+
+  .icon-btn {
+    @apply text-xl text-slate-300 cursor-pointer hover:text-[#2B85FF];
+  }
+
+  .input-label {
+    @apply text-xs text-slate-400;
+  }
+}
+
+@layer components {
+  .input-glass {
+    @apply w-full px-5 py-3 rounded-xl border border-gray-300 bg-white/60 backdrop-blur-md text-sm text-gray-700 placeholder-gray-400 shadow-inner transition focus:ring-2 focus:ring-[#2B85FF] focus:outline-none;
+  }
+
+  /* Placeholder tweaks for floating effect */
+  .input-glass::placeholder {
+    @apply text-gray-400;
+    transform: translateY(-2px);
+    transition: transform 0.3s ease, font-size 0.3s ease, opacity 0.3s ease;
+  }
+
+  .input-glass:focus::placeholder,
+  .input-glass:not(:placeholder-shown)::placeholder {
+    transform: translateY(-8px);
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .animate-blob {
+    animation: blob 8s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
