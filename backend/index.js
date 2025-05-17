@@ -18,7 +18,7 @@ mongoose.connect(mongoUri)
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: ["http://localhost:5173" , "https://noteshub-frontend.vercel.app"], credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173" , "https://noteshub4u.vercel.app/"], credentials: true }));
 
 const PORT = process.env.PORT || 3000;
 
